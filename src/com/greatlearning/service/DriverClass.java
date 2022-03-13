@@ -1,10 +1,12 @@
 package com.greatlearning.service;
+
 import java.util.Scanner;
 import com.greatlearning.model.Employee;
+
 public class DriverClass {
 	public static void main(String[] args) {
 		Employee employee = new Employee("Harshit", "Choudhary");
-		CredentialService cs= new CredentialService();
+		CredentialService cs = new CredentialService();
 		String generatedEmail;
 		char[] generatedPassword;
 		System.out.println("Please enter the department from the following ");
@@ -16,29 +18,26 @@ public class DriverClass {
 		Scanner sc = new Scanner(System.in);
 		int option = sc.nextInt();
 		if (option == 1) {
-			generatedEmail = cs.generateEmailAddress (employee.getFirstName().toLowerCase(),
+			generatedEmail = cs.generateEmailAddress(employee.getFirstName().toLowerCase(),
 					employee.getLastName().toLowerCase(), "tech");
 			generatedPassword = cs.generatePassword();
-			cs.showCredentials (employee, generatedEmail, generatedPassword);
-		}
-		else if (option == 2) {
-			generatedEmail = cs.generateEmailAddress (employee.getFirstName().toLowerCase(),
+			cs.showCredentials(employee, generatedEmail, generatedPassword);
+		} else if (option == 2) {
+			generatedEmail = cs.generateEmailAddress(employee.getFirstName().toLowerCase(),
 					employee.getLastName().toLowerCase(), "adm");
 			generatedPassword = cs.generatePassword();
-			cs.showCredentials (employee, generatedEmail, generatedPassword);
-		}
-		else if (option == 3) {
-			generatedEmail = cs.generateEmailAddress (employee.getFirstName().toLowerCase(),
+			cs.showCredentials(employee, generatedEmail, generatedPassword);
+		} else if (option == 3) {
+			generatedEmail = cs.generateEmailAddress(employee.getFirstName().toLowerCase(),
 					employee.getLastName().toLowerCase(), "hr");
 			generatedPassword = cs.generatePassword();
-			cs.showCredentials (employee, generatedEmail, generatedPassword);
-		}
-		else if (option == 4) {
-			generatedEmail = cs.generateEmailAddress (employee.getFirstName().toLowerCase(),
+			cs.showCredentials(employee, generatedEmail, generatedPassword);
+		} else if (option == 4) {
+			generatedEmail = cs.generateEmailAddress(employee.getFirstName().toLowerCase(),
 					employee.getLastName().toLowerCase(), "Legal");
 			generatedPassword = cs.generatePassword();
-			cs.showCredentials (employee, generatedEmail, generatedPassword);
+			cs.showCredentials(employee, generatedEmail, generatedPassword);
 		}
-		
+
 	}
 }
